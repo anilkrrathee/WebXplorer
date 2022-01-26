@@ -19,7 +19,7 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-      - run: dotnet publish -c Release -o release src/WebXplorer.csproj
+      - run: dotnet publish -c Release -o release ./src
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
